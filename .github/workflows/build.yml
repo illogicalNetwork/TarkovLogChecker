@@ -16,11 +16,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install cx-Freeze
+        pip install pyinstaller
 
-    - name: Build with cx-Freeze
+    - name: Build with PyInstaller
       run: |
-        cxfreeze -c tarkov_logs.py --target-dir dist
+        pyinstaller --onefile tarkov_logs.py
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
